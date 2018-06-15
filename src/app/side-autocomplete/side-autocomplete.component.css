@@ -13,3 +13,7 @@
   background-color: #D3F9F4;
   border: solid #059E87 1px;
 }
+
+.highlighted {
+  color: red !important;
+}

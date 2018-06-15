@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {AutocompleteService} from '../autocomplete.service';
 
 @Component({
   selector: 'app-side-autocomplete',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideAutocompleteComponent implements OnInit {
 
-  private cityList: String[] = [
-    'Paris', 'Paris', 'Paris', 'Paris', 'Paris', 'Paris'
-  ];
+  private focused = 'Paris';
+  private cityList: string[] = [];
 
-  constructor() { }
+  constructor(private autoCompleteService: AutocompleteService) { }
 
   ngOnInit() {
+    this.autoCompleteService.cityList.subscribe(cityList => {
+      this.cityList = cityList;
+    });
   }
-
 }

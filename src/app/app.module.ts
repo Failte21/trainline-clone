@@ -10,6 +10,8 @@ import { SideCalendarComponent } from './side-calendar/side-calendar.component';
 import { SidePersonComponent } from './side-person/side-person.component';
 import { InputFocusDirective } from './input-focus.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
