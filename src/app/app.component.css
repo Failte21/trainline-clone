@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.core-container {
+  background-image: url("https://assets.trainline.eu/assets/images/open-home/covers/cover-beach-8dc53adfd913bec45958b705ec6369fa.jpg");
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  /*background-color: aquamarine;*/
+  color: #ffffff;
+}
+
+.main-form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 470px;
+  /*background-color: aqua;*/
+}
+
+.form-section {
+  box-sizing: border-box;
+  flex: 1;
+  background-color: white;
+  margin: 40px 10px;
+  max-width: 460px;
+  padding: 30px;
+}
+
+.input-section {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.tlc-input {
+  color: #555555;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  border: solid #555 1px;
+  background-color: white;
+}
+
+button {
+  display: inline-flex;
+}
+
+.input-section input:first-child {
+  border-radius: 0.3125em 0.3125em 0 0;
+}
+
+.input-section input:last-child {
+  border-radius: 0 0 0.3125em 0.3125em;
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.submit-btn {
+  padding: 15px;
+  min-width: 180px;
+  display: inline;
+  color: white;
+  background-color: #01aa91;
+  border: none;
+}
+
+a {
+  color: #01aa91;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
