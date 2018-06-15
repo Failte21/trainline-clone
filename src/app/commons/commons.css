@@ -33,10 +33,10 @@ button {
   display: inline-flex;
 }
 
-.input-section input:first-child {
+.input-section input:first-child, button:first-child {
   border-radius: 0.3125em 0.3125em 0 0;
 }
 
-.input-section input:last-child {
+.input-section input:last-child, button:last-child {
   border-radius: 0 0 0.3125em 0.3125em;
 }

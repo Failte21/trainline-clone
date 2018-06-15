@@ -1,0 +1,15 @@
+.side-autocomplete {
+  padding: 30px;
+}
+
+.extra-section {
+  width: 100%;
+}
+
+.extra-section button {
+  float: right;
+  color: #059E87;
+  padding: 8px 14px;
+  background-color: #D3F9F4;
+  border: solid #059E87 1px;
+}
