@@ -1,0 +1,42 @@
+h3 {
+  margin: 0;
+}
+
+.form-section {
+  box-sizing: border-box;
+  background-color: white;
+  min-height: 500px;
+  margin: 40px 10px;
+  max-width: 460px;
+  border-radius: 0.3125em;
+}
+
+.side-section {
+  padding: 30px;
+}
+
+.input-section {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.tlc-input {
+  color: #555555;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  border: solid #555 1px;
+  background-color: white;
+}
+
+button {
+  display: inline-flex;
+}
+
+.input-section input:first-child {
+  border-radius: 0.3125em 0.3125em 0 0;
+}
+
+.input-section input:last-child {
+  border-radius: 0 0 0.3125em 0.3125em;
+}

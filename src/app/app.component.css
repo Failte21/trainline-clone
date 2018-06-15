@@ -22,56 +22,6 @@ body {
   /*background-color: aqua;*/
 }
 
-.form-section {
-  box-sizing: border-box;
-  flex: 1;
-  background-color: white;
-  margin: 40px 10px;
-  max-width: 460px;
-  padding: 30px;
-}
-
-.input-section {
-  width: 100%;
-  padding: 15px 0;
-}
-
-.tlc-input {
-  color: #555555;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 15px;
-  border: solid #555 1px;
-  background-color: white;
-}
-
-button {
-  display: inline-flex;
-}
-
-.input-section input:first-child {
-  border-radius: 0.3125em 0.3125em 0 0;
-}
-
-.input-section input:last-child {
-  border-radius: 0 0 0.3125em 0.3125em;
-}
-
-.search-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.submit-btn {
-  padding: 15px;
-  min-width: 180px;
-  display: inline;
-  color: white;
-  background-color: #01aa91;
-  border: none;
-}
-
 a {
   color: #01aa91;
   text-decoration: none;

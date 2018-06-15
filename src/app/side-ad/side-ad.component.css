@@ -1,0 +1,48 @@
+.ad-title-container {
+  background-color: #2D3253;
+  padding: 30px;
+  border-radius: 0.3125em 0.3125em 0 0;
+}
+
+.ad-title-container h3 {
+  color: white;
+}
+
+.ad-list {
+  padding: 0 30px;
+}
+
+.ad-list li {
+  display: flex;
+  margin: 10px;
+}
+
+.list-element {
+  padding: 10px;
+}
+
+em {
+  display: block;
+  color: #01aa91;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.agents {
+  padding: 0 30px;
+}
+
+.agents h4 {
+  text-align: center;
+  font-size: 14px;
+  color: #323E42;
+}
+
+.agent-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.agent-list img {
+  height: 40px;
+}

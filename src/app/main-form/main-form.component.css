@@ -1,0 +1,27 @@
+.main {
+  padding: 30px;
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.submit-btn {
+  padding: 15px;
+  min-width: 180px;
+  display: inline;
+  color: white;
+  background-color: #01aa91;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #01aa91;
+}
+
+a:hover {
+  text-decoration: underline;
+}
