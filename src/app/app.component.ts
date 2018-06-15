@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DisplayService} from './display.service';
 import {Subscription} from 'rxjs';
+import {Form, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,24 @@ export class AppComponent implements OnInit {
 
   private displaySubsription: Subscription;
   private sideToDisplay: String;
-  constructor(private displayService: DisplayService) {}
+  private form: FormGroup;
+
+  constructor(private displayService: DisplayService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.displaySubsription = this.displayService.sideToDisplay.subscribe(sideToDisplay => {
       this.sideToDisplay = sideToDisplay;
     });
+
+    this.form = this.fb.group({
+      // person: this.fb.group({
+      //   ageRange: ['Adult (26-59)', Validators.required],
+      //   discount: null
+      // })
+    });
+  }
+
+  formInitialized(name: string, form: FormGroup) {
+    this.form.setControl(name, form);
   }
 }

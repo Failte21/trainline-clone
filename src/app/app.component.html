@@ -2,12 +2,19 @@
   <div class="title-container">
     <h1>European trains and buses at your fingertips.</h1>
   </div>
-  <div class="form-container">
+  <div class="form-container" [formGroup]="form">
     <div class="main-form-container">
-      <app-main-form></app-main-form>
+      <app-main-form (formReady)="formInitialized('station', $event)"></app-main-form>
       <app-side-ad *ngIf="sideToDisplay === 'ad'"></app-side-ad>
       <app-side-autocomplete *ngIf="sideToDisplay === 'departure'"></app-side-autocomplete>
-      <app-side-person *ngIf="sideToDisplay === 'person'"></app-side-person>
+      <app-side-person
+        *ngIf="sideToDisplay === 'person'"
+        (formReady)="formInitialized('person', $event)"
+      >
+      </app-side-person>
     </div>
+  </div>
+  <div style="background-color: white">
+    {{form.value | json}}
   </div>
 </div>

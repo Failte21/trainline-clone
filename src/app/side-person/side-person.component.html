@@ -1,9 +1,9 @@
-<div class="form-section side-person">
+<div class="form-section side-person" [formGroup]="personForm">
   <div class="autoComplete-title-container">
     <h3>Choose your passengers</h3>
   </div>
   <div class="inline-input-section">
-    <select class="tlc-select age-range-select">
+    <select class="tlc-select age-range-select" formControlName="ageRange">
       <option
         *ngFor='let ageRange of ageRanges'
         [value]="ageRange"

@@ -9,6 +9,7 @@ import { SideAutocompleteComponent } from './side-autocomplete/side-autocomplete
 import { SideCalendarComponent } from './side-calendar/side-calendar.component';
 import { SidePersonComponent } from './side-person/side-person.component';
 import { InputFocusDirective } from './input-focus.directive';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { InputFocusDirective } from './input-focus.directive';
     InputFocusDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
