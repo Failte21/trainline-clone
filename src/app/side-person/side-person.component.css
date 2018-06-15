@@ -1,0 +1,16 @@
+.side-person {
+  padding: 30px;
+}
+
+.loyalty-btn {
+  color: #01aa91;
+  border-radius: 0 0.3125em 0.3125em 0;
+}
+
+.loyalty-btn:hover {
+  background-color: #D3F9F4;
+}
+
+.age-range-select {
+  border-radius: 0.3125em 0 0 0.3125em;
+}
