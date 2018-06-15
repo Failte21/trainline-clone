@@ -5,9 +5,9 @@
   <div class="form-container">
     <div class="main-form-container">
       <app-main-form></app-main-form>
-      <!--<app-side-ad></app-side-ad>-->
-      <!--<app-side-autocomplete></app-side-autocomplete>-->
-      <app-side-person></app-side-person>
+      <app-side-ad *ngIf="sideToDisplay === 'ad'"></app-side-ad>
+      <app-side-autocomplete *ngIf="sideToDisplay === 'departure'"></app-side-autocomplete>
+      <app-side-person *ngIf="sideToDisplay === 'person'"></app-side-person>
     </div>
   </div>
 </div>

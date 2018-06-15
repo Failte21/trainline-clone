@@ -8,6 +8,7 @@ import { SideAdComponent } from './side-ad/side-ad.component';
 import { SideAutocompleteComponent } from './side-autocomplete/side-autocomplete.component';
 import { SideCalendarComponent } from './side-calendar/side-calendar.component';
 import { SidePersonComponent } from './side-person/side-person.component';
+import { InputFocusDirective } from './input-focus.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SidePersonComponent } from './side-person/side-person.component';
     SideAdComponent,
     SideAutocompleteComponent,
     SideCalendarComponent,
-    SidePersonComponent
+    SidePersonComponent,
+    InputFocusDirective
   ],
   imports: [
     BrowserModule
