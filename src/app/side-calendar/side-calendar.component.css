@@ -1,0 +1,19 @@
+.side-calendar {
+  padding: 30px;
+}
+
+.time-container {
+  display: flex;
+  padding: 5px;
+}
+
+.time-container button {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.time-container button:hover {
+  background-color: #F0F1F5;
+}

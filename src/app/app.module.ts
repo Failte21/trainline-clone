@@ -10,9 +10,10 @@ import { SideCalendarComponent } from './side-calendar/side-calendar.component';
 import { SidePersonComponent } from './side-person/side-person.component';
 import { InputFocusDirective } from './input-focus.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import { AutocompleteInputDirective } from './autocomplete-input.directive';
+import {MatDatepickerModule} from '@angular/material';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { AutocompleteInputDirective } from './autocomplete-input.directive';
     SideCalendarComponent,
     SidePersonComponent,
     InputFocusDirective,
-    AutocompleteInputDirective
-  ],
+    AutocompleteInputDirective,
+],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
