@@ -23,10 +23,14 @@ export class AppComponent implements OnInit {
     });
 
     this.form = this.fb.group({
-      // person: this.fb.group({
-      //   ageRange: ['Adult (26-59)', Validators.required],
-      //   discount: null
-      // })
+      person: this.fb.group({
+        ageRange: ['Adult (26-59)', Validators.required],
+        discount: null
+      }),
+      date: this.fb.group({
+        depart: [null, Validators.required],
+        return: [null, Validators.required]
+      })
     });
   }
 

@@ -6,7 +6,11 @@
     <div class="main-form-container">
       <app-main-form (formReady)="formInitialized('station', $event)"></app-main-form>
       <app-side-ad *ngIf="sideToDisplay === 'ad'"></app-side-ad>
-      <app-side-calendar *ngIf="sideToDisplay === 'dates'"></app-side-calendar>
+      <app-side-calendar
+        *ngIf="sideToDisplay === 'dates'"
+        (formReady)="formInitialized('date', $event)"
+      >
+      </app-side-calendar>
       <app-side-autocomplete *ngIf="sideToDisplay === 'departure'"></app-side-autocomplete>
       <app-side-person
         *ngIf="sideToDisplay === 'person'"
