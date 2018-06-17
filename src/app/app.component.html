@@ -4,14 +4,20 @@
   </div>
   <div class="form-container" [formGroup]="form">
     <div class="main-form-container">
-      <app-main-form (formReady)="formInitialized('station', $event)"></app-main-form>
+      <app-main-form (formReady)="formInitialized('station', $event)">
+      </app-main-form>
       <app-side-ad *ngIf="sideToDisplay === 'ad'"></app-side-ad>
       <app-side-calendar
         *ngIf="sideToDisplay === 'dates'"
+        [detail]="detail"
         (formReady)="formInitialized('date', $event)"
       >
       </app-side-calendar>
-      <app-side-autocomplete *ngIf="sideToDisplay === 'departure'"></app-side-autocomplete>
+      <app-side-autocomplete
+        *ngIf="sideToDisplay === 'departure'"
+        [detail]="detail"
+      >
+      </app-side-autocomplete>
       <app-side-person
         *ngIf="sideToDisplay === 'person'"
         (formReady)="formInitialized('person', $event)"

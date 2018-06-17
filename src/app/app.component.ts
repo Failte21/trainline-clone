@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DisplayService} from './display.service';
-import {Subscription} from 'rxjs';
+import {combineLatest, Observable, Subscription} from 'rxjs';
 import {Form, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -14,12 +14,17 @@ export class AppComponent implements OnInit {
   private displaySubsription: Subscription;
   private sideToDisplay: String;
   private form: FormGroup;
+  detail;
 
   constructor(private displayService: DisplayService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.displaySubsription = this.displayService.sideToDisplay.subscribe(sideToDisplay => {
+    this.displaySubsription = combineLatest([
+      this.displayService.sideToDisplay, this.displayService.detail
+    ]).subscribe(([sideToDisplay, detail]) => {
       this.sideToDisplay = sideToDisplay;
+      console.log({detail});
+      this.detail = detail;
     });
 
     this.form = this.fb.group({
