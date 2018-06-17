@@ -12,6 +12,7 @@ import { InputFocusDirective } from './input-focus.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
+import { AutocompleteInputDirective } from './autocomplete-input.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
     SideAutocompleteComponent,
     SideCalendarComponent,
     SidePersonComponent,
-    InputFocusDirective
+    InputFocusDirective,
+    AutocompleteInputDirective
   ],
   imports: [
     BrowserModule,

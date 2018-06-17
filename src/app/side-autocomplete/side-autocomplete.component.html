@@ -7,7 +7,8 @@
       *ngFor="let city of cityList"
       type="text"
       class="tlc-input"
-      [ngClass]="{highlighted: city === focused}"
+      appAutocompleteInput
+      [name]="city"
     >
       {{city}}
     </button>
