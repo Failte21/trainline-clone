@@ -7,7 +7,7 @@ h3 {
   background-color: white;
   min-height: 500px;
   margin: 40px 10px;
-  max-width: 460px;
+  width: 460px;
   border-radius: 0.3125em;
 }
 
@@ -22,7 +22,6 @@ h3 {
 .green-btn {
   color: #059E87 !important;
   background-color: #D3F9F4 !important;
-  border: solid #059E87 1px !important;
 }
 
 .side-section {
@@ -38,6 +37,7 @@ h3 {
   width: 100%;
   padding: 15px 0;
   display: flex;
+  border: 1px solid green;
 }
 
 .tlc-select {

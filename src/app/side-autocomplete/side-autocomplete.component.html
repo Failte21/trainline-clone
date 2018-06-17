@@ -4,11 +4,12 @@
   </div>
   <div class="input-section">
     <button
-      *ngFor="let city of cityList"
+      *ngFor="let city of cityList; let i = index"
       type="text"
-      class="tlc-input"
+      class="tlc-input city-btn"
       appAutocompleteInput
       [name]="city"
+      [ngClass]="{'highlighted': focused === i}"
     >
       {{city}}
     </button>

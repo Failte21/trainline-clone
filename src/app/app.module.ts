@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AutocompleteInputDirective } from './autocomplete-input.directive';
 import {MatDatepickerModule} from '@angular/material';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import { ListNavigatorDirective } from './list-navigator.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter';
     SidePersonComponent,
     InputFocusDirective,
     AutocompleteInputDirective,
+    ListNavigatorDirective,
 ],
   imports: [
     BrowserModule,

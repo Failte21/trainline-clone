@@ -14,6 +14,12 @@
   border: solid #059E87 1px;
 }
 
-.highlighted {
-  color: red !important;
+.city-btn {
+  color: #323E42;
+}
+
+.city-btn:hover, .highlighted {
+  cursor: pointer;
+  background-color: #fcfcfd !important;
+  color: #000 !important;
 }

@@ -2,6 +2,10 @@
   padding: 30px;
 }
 
+h3 {
+  color: #323E42;
+}
+
 .search-section {
   display: flex;
   justify-content: space-between;

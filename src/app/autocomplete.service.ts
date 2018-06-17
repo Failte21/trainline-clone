@@ -13,6 +13,7 @@ export class AutocompleteService {
   ]);
   public value: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private detail: string;
+  public focusedIndex: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
 
   constructor(private http: HttpClient) {
@@ -33,8 +34,27 @@ export class AutocompleteService {
     this.value.next(value);
   }
 
+  setValueWithIndex() {
+    const cityList = this.cityList.getValue();
+    const index = this.focusedIndex.getValue();
+    const selectedCity = cityList[index];
+    this.value.next(selectedCity);
+  }
+
   setDetail(detail: string) {
     this.detail = detail;
+  }
+
+  navigate(direction: 'asc' | 'desc') {
+    const currentIndex = this.focusedIndex.getValue();
+    if (direction === 'desc') {
+      const maxLen = this.cityList.getValue().length;
+      const nextIndex = currentIndex + 1 > maxLen - 1 ? maxLen - 1 : currentIndex + 1;
+      this.focusedIndex.next(nextIndex);
+    } else {
+      const nextIndex = currentIndex - 1 > 0 ? currentIndex - 1 : 0;
+      this.focusedIndex.next(nextIndex);
+    }
   }
 
 }

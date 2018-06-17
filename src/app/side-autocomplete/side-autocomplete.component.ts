@@ -8,7 +8,7 @@ import {AutocompleteService} from '../autocomplete.service';
 })
 export class SideAutocompleteComponent implements OnInit {
 
-  private focused = 'Paris';
+  private focused = 0;
   private cityList: string[] = [];
 
   constructor(private autoCompleteService: AutocompleteService) { }
@@ -16,6 +16,10 @@ export class SideAutocompleteComponent implements OnInit {
   ngOnInit() {
     this.autoCompleteService.cityList.subscribe(cityList => {
       this.cityList = cityList;
+    });
+
+    this.autoCompleteService.focusedIndex.subscribe(i => {
+      this.focused = i;
     });
   }
 }
