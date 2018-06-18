@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AutocompleteService} from '../autocomplete.service';
 import {DisplayService} from '../display.service';
@@ -10,13 +10,15 @@ import {DisplayService} from '../display.service';
 })
 export class MainFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  @Input() dateLabels;
+
   private form: FormGroup;
   private detail;
 
   constructor(
     private fb: FormBuilder,
     private autoCompleteService: AutocompleteService,
-    private displayService: DisplayService;
+    private displayService: DisplayService
   ) {}
 
   ngOnInit(){
@@ -25,6 +27,12 @@ export class MainFormComponent implements OnInit {
         departure: [null, Validators.required],
         arrival: [null, Validators.required],
         via: null
+      }),
+      date: this.fb.group({
+        departureDate: [null, Validators.required],
+        returnDate: [null],
+        departureTime: ['18:00', Validators.required],
+        returnTime: [null],
       })
     });
 

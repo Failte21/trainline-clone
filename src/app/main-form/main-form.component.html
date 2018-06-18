@@ -32,8 +32,14 @@
     </div>
 
     <div class="input-section dates" >
-      <button class="tlc-input" appInputFocus group="dates" name="departure">Depart</button>
-      <button class="tlc-input" appInputFocus group="dates" name="return">Return</button>
+      <button class="tlc-input" appInputFocus group="dates" name="departure">
+        {{dateLabels.depart || 'Depart'}}
+        {{dateLabels.departTime}}
+      </button>
+      <button class="tlc-input" appInputFocus group="dates" name="return">
+        {{dateLabels.return || 'Return'}}
+        {{dateLabels.returnTime}}
+      </button>
     </div>
 
     <div class="input-section persons">

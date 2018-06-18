@@ -12,6 +12,7 @@ import * as moment from 'moment'; // add this 1 of 4
 export class SideCalendarComponent implements OnInit, OnChanges {
 
   @Input() detail;
+  @Input() values;
   @Output() formReady: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   timeList = ['6.00', '8.00', '10.00', '12.00', '14.00', '16.00', '18.00', '20.00', '22.00'];
@@ -20,6 +21,8 @@ export class SideCalendarComponent implements OnInit, OnChanges {
   time: Moment;
   today = moment();
   title;
+  datePlaceholder;
+  timePlaceHolder;
   private fullDate: Moment;
 
   constructor(private fb: FormBuilder) { }
@@ -29,27 +32,30 @@ export class SideCalendarComponent implements OnInit, OnChanges {
   ngOnInit() {
 
     this.form = this.fb.group({
-      depart: [null, Validators.required],
-      return: [null]
+      departDate: [null, Validators.required],
+      departTime: ["18:00", Validators.required],
+      returnDate: [null],
+      returnTime: ["18:00"]
     });
 
     this.formReady.emit(this.form);
 
-    this._datePicker.selectedChange.subscribe(date => {
-      this.date = date;
-      this.updateDate();
-    });
+    this._datePicker.selectedChange.subscribe(this.updateDate);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    const {departDate, returnDate, departTime, returnTime} = this.values;
     this.title = `Select a ${this.detail} date`;
   }
 
   updateTime = (time: string) => {
+    const path = this.detail === 'departure' ? 'departTime' : 'returnTime';
+    this.form.get(path).setValue(time);
   }
 
-  updateDate = () => {
-    const date: Moment = this.date;
-    this.form.get('depart').setValue(date);
+  updateDate = dateString => {
+    const date: Moment = dateString;
+    const path = this.detail === 'departure' ? 'departDate' : 'returnDate';
+    this.form.get(path).setValue(date);
   }
 }

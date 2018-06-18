@@ -4,12 +4,16 @@
   </div>
   <div class="form-container" [formGroup]="form">
     <div class="main-form-container">
-      <app-main-form (formReady)="formInitialized('station', $event)">
+      <app-main-form
+        (formReady)="formInitialized('station', $event)"
+        [dateLabels]='dateLabels'
+      >
       </app-main-form>
       <app-side-ad *ngIf="sideToDisplay === 'ad'"></app-side-ad>
       <app-side-calendar
         *ngIf="sideToDisplay === 'dates'"
         [detail]="detail"
+        [values]="form.get('date').value"
         (formReady)="formInitialized('date', $event)"
       >
       </app-side-calendar>
