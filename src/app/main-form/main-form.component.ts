@@ -10,7 +10,8 @@ import {DisplayService} from '../display.service';
 })
 export class MainFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
-  @Input() dateLabels;
+  @Input() dateLabels;;
+  @Input() ageRange;
 
   private form: FormGroup;
   private detail;
@@ -21,7 +22,7 @@ export class MainFormComponent implements OnInit {
     private displayService: DisplayService
   ) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.form = this.fb.group({
       stations: this.fb.group({
         departure: [null, Validators.required],
