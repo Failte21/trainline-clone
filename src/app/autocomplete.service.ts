@@ -18,14 +18,14 @@ export class AutocompleteService {
 
   constructor(private http: HttpClient) {
     http.get('http://www-uat.tictactrip.eu/api/cities/popular/5')
-      .subscribe(res => {
+      .subscribe((res: any[]) => {
         this.cityList.next(res.map(e => e.local_name));
       });
   }
 
   onInputChange(req: string) {
     const url = `http://www-uat.tictactrip.eu/api/cities/autocomplete/?q=${req}`;
-    this.http.get(url).subscribe(res   => {
+    this.http.get(url).subscribe((res: any[])   => {
       this.cityList.next(res.map(e => e.local_name).splice(0, 7));
     });
   }
@@ -39,10 +39,6 @@ export class AutocompleteService {
     const index = this.focusedIndex.getValue();
     const selectedCity = cityList[index];
     this.value.next(selectedCity);
-  }
-
-  setDetail(detail: string) {
-    this.detail = detail;
   }
 
   navigate(direction: 'asc' | 'desc') {

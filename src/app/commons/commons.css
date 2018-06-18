@@ -8,7 +8,6 @@ h3 {
   min-height: 500px;
   margin: 40px 10px;
   width: 460px;
-  border-radius: 0.3125em;
 }
 
 .transparent-green {
@@ -58,14 +57,6 @@ h3 {
 
 button {
   display: inline-flex;
-}
-
-.input-section input:first-child, button:first-child {
-  border-radius: 0.3125em 0.3125em 0 0;
-}
-
-.input-section input:last-child, button:last-child {
-  border-radius: 0 0 0.3125em 0.3125em;
 }
 
 a {
