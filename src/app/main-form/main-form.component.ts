@@ -10,8 +10,9 @@ import {DisplayService} from '../display.service';
 })
 export class MainFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
-  @Input() dateLabels;;
+  @Input() dateLabels;
   @Input() ageRange;
+  @Input() submitForm;
 
   private form: FormGroup;
   private detail;
@@ -28,16 +29,8 @@ export class MainFormComponent implements OnInit {
         departure: [null, Validators.required],
         arrival: [null, Validators.required],
         via: null
-      }),
-      date: this.fb.group({
-        departureDate: [null, Validators.required],
-        returnDate: [null],
-        departureTime: ['18:00', Validators.required],
-        returnTime: [null],
       })
     });
-
-    this.formReady.emit(this.form);
 
     this.form.get('stations.departure').valueChanges.subscribe(v => {
       this.autoCompleteService.onInputChange(v);

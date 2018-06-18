@@ -20,11 +20,10 @@ export class AppComponent implements OnInit {
   constructor(private displayService: DisplayService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.displaySubsription = combineLatest([
+      this.displaySubsription = combineLatest([
       this.displayService.sideToDisplay, this.displayService.detail
     ]).subscribe(([sideToDisplay, detail]) => {
       this.sideToDisplay = sideToDisplay;
-      console.log({detail});
       this.detail = detail;
     });
 
@@ -59,5 +58,9 @@ export class AppComponent implements OnInit {
 
   formInitialized(name: string, form: FormGroup) {
     this.form.setControl(name, form);
+  }
+
+  submitForm() {
+    console.log(this.form.valid);
   }
 }

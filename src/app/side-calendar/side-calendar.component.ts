@@ -44,11 +44,10 @@ export class SideCalendarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const {departDate, returnDate, departTime, returnTime} = this.values;
     this.title = `Select a ${this.detail} date`;
   }
 
-  updateTime = (time: string) => {
+  updateTime(time: string) {
     const path = this.detail === 'departure' ? 'departTime' : 'returnTime';
     this.form.get(path).setValue(time);
   }

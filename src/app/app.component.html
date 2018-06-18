@@ -7,6 +7,7 @@
       <app-main-form
         (formReady)="formInitialized('station', $event)"
         [dateLabels]='dateLabels'
+        [submitForm]="submitForm"
         [ageRange]="form.get('person.ageRange').value"
       >
       </app-main-form>
