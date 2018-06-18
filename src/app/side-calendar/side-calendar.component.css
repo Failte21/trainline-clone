@@ -17,3 +17,12 @@
 .time-container button:hover {
   background-color: #F0F1F5;
 }
+
+/deep/ #green-calendar div.mat-calendar-body-selected {
+  background-color: #059E87 !important;
+}
+
+.selected {
+  background-color: #059E87 !important;
+  color: white;
+}

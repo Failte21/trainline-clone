@@ -2,10 +2,13 @@
     <div class="title-container">
       <h3>{{title}}</h3>
     </div>
-    <mat-calendar [selected]="date" [minDate]="today"></mat-calendar>
+    <mat-calendar id="green-calendar" [selected]="date" [minDate]="minDate"></mat-calendar>
     <ul class="time-container">
       <li *ngFor="let time of timeList">
-        <button (click)="updateTime(time)">
+        <button
+          [ngClass]="{'selected': dateTime === time}"
+          (click)="updateTime(time)"
+        >
           {{time}}
         </button>
       </li>
